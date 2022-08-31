@@ -1,0 +1,485 @@
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start
+font https://www.flaticon.com/uicons/3
+*/
+
+body{  
+  background-color: #00223E; /* appear this color when the browser is not supporting gradient */
+  background-image: linear-gradient(to bottom right, #000000 , #001525);  
+  height: 100%;  
+  margin: 0;  
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 1200px;/*viewpoint*/
+} 
+
+ul.bulletpoint{
+list-style-type: circle;
+color: rgb(255, 250, 243);
+}
+
+/*home logo/button*/
+.homeicon{
+position: absolute;
+font-size: 25px;
+color: #f7f7f7;
+left: 90px;
+top: 55px;
+}
+
+h3:hover {
+color: #006fca;
+font-weight: 400;
+}
+
+h3{
+font-family: 'Gantari', sans-serif;
+font-weight: 100;
+color: #f7f7f7;
+font-size: 15px;
+position: absolute;
+left: 110px;
+top: 45px;
+padding-left: 12px;
+cursor: pointer;
+}
+
+
+/*left and right switching buttons*/
+.iconleft{
+position: absolute;
+font-size:20px;
+color: white;
+left: 106px;
+top: 378px;
+}
+
+.iconright{
+position: absolute;
+font-size:20px;
+color: white;
+right: 105px;
+top: 378px;
+}
+
+.buttonright {
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 0.4;
+  border: none;
+  color: white;
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  right: 90px;
+  top: 360px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.buttonright:hover {
+background-color: white;
+opacity: 0.6;
+filter: drop-shadow(0px 2px 16px #ffffff);/*left-right, up-down, blur*/
+}
+
+.buttonleft{
+position: absolute;
+background-color: #ffffff;
+opacity: 0.4;
+border: none;
+color: white;
+display: inline-block;
+height: 55px;
+width: 55px;
+left: 90px;
+top: 360px;
+border-radius: 100px;
+cursor: pointer;
+}
+
+.buttonleft:hover {
+background-color: #f7f7f7;
+opacity: 0.6;
+filter: drop-shadow(0px 2px 16px #f7f7f7);/*left-right, up-down, blur*/
+}
+
+/*grid*/
+.wrapper {
+justify-content: center;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-auto-rows: 140px;/*width of the row*/
+padding-left: 60px;
+padding-right: 120px;
+}
+
+.rect{
+grid-column-start: 1;
+grid-row-start: 3;
+grid-row-end: 5;
+background-color: #f7f7f7;
+z-index: -4;
+border-radius: 10%;
+opacity: 0.15;
+margin-top: 220px;
+margin-left: 20px;
+margin-left: 20px;
+height: 250px;
+}
+
+
+.rect2{
+  background-color: #f7f7f7;
+  z-index: -4;
+  border-radius: 10%;
+  opacity: 0.15;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-left: 20px;
+  height: 250px;
+}
+
+
+.rect3{
+    background-color:#f7f7f7;
+    z-index: -4;
+    border-radius: 10%;
+    opacity: 0.15;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-left: 20px;
+    height: 250px;
+}
+
+
+.g1 {
+grid-column-start: 1;/*define the start edge of the grid*/
+grid-column-end: 4;
+grid-row-start: 1;
+grid-row-end: 3;
+}
+
+/*left - about earth*/
+.g2 {
+grid-column-start: 1;
+grid-row-start: 3;
+grid-row-end: 5;
+padding-top: 170px;
+padding-left: 70px;
+padding-right: 50px;
+}
+
+/*middle - basic statistics*/
+.g3 {
+padding-top: 170px;
+padding-left: 70px;
+padding-right: 40px;
+}
+
+/*facts - facts*/
+.g4 {
+padding-top: 170px;
+padding-left: 40px;
+padding-right: 50px;
+}
+
+
+
+
+/*planet animation*/
+.earth{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 20px 20px 80px 20px #00223E inset, 0 0 25px 10px #051a4f;
+  animation: jump 5s ease-in-out infinite;
+}
+          
+/*let the image inside the circle move paralleled*/
+.earth > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 20px 20px #000000 inset, 10px 10px 25px 20px #006fca;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://storage.googleapis.com/gweb-uniblog-publish-prod/images/New-global-view.max-1000x1000.jpeg);
+  background-size: cover;
+  animation: spin 30s linear alternate infinite;
+}
+
+
+.mercury{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px #835800 inset, 0 0 25px 10px #4a3300;
+  animation: jump 5s ease-in-out infinite;
+}
+          
+/*let the image inside the circle move paralleled*/
+.mercury > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 10px 10px #000000 inset, 10px 10px 25px 20px #644f1e;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://live.staticflickr.com/4872/32479340708_b5093f2fcb_b.jpg);
+  background-size: cover;
+  animation: spin 10s linear alternate infinite;
+}
+
+
+.venus{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 0 50px 30px #835800 inset, 0 0 60px 10px #4a3300;
+  border-radius: 50%;
+  animation: jump 3s ease-in-out infinite;
+}
+          
+/*let the image inside the circle move paralleled*/
+.venus > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 20px 20px #000000 inset, 10px 10px 25px 20px #643c1e;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Cylindrical_Map_of_Venus.jpg/1600px-Cylindrical_Map_of_Venus.jpg?20150824100848);
+  background-size: cover;
+  animation: spin 20s linear alternate infinite;
+}
+
+/*/////mars/////*/
+.mars{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 20px 20px 80px 20px #913f00 inset, 0 0 50px 10px #6f4106;
+  animation: jump 3s ease-in-out infinite;
+}
+          
+
+.mars > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 20px 20px #000000 inset, 10px 10px 50px 10px #7c4a18;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/70/Solarsystemscope_texture_8k_mars.jpg);
+  background-size: cover;
+  animation: spin 30s linear alternate infinite;
+}
+
+
+.jupiter{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 60px 20px #00223E inset, 0 0 100px 40px #4f2f05;
+  animation: jump 5s ease-in-out infinite;
+}
+          
+/*let the image inside the circle move paralleled*/
+.jupiter > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 60px 50px black  inset, 10px 10px 80px 90px #a18d5a;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://planetary.s3.amazonaws.com/web/assets/pictures/_2400x1200_crop_center-center_82_line/20180511_jupiter_map_css_plus_juno_bj.jpg.webp);
+  background-size: cover;
+  animation: spin 10s linear alternate infinite;
+}
+
+.saturn{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -30px -30px 80px 20px #00223E inset, 0 0 80px 20px #5c4f3d;
+  animation: jump 5s ease-in-out infinite;
+}
+        
+/*let the image inside the circle move paralleled*/
+.saturn > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 70px 40px black  inset, 10px 10px 80px 90px #908568;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e0763947-6f42-4d09-944f-c2d6f41c415b/dcaift0-422ad564-f7b0-4291-914f-425b9ac29a35.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UwNzYzOTQ3LTZmNDItNGQwOS05NDRmLWMyZDZmNDFjNDE1YlwvZGNhaWZ0MC00MjJhZDU2NC1mN2IwLTQyOTEtOTE0Zi00MjViOWFjMjlhMzUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YYTxK1xSwJxGTBIMLHsgFWiwrdd0W6UqmXy7a5CCnnk);
+  background-size: cover;
+  animation: spin 10s linear alternate infinite;
+}
+
+
+/*uranus */
+.uranus{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 10px #00223E inset, 0 0 45px 10px #144652;
+  animation: jump 4s ease-in-out infinite;
+}
+        
+/*let the image inside the circle move paralleled*/
+.uranus > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 40px 40px black  inset, 10px 10px 80px 90px #688690;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1912b050-3675-4394-a3d1-d0b4cb43ae0a/dc18wwb-e195cd81-efbd-480a-9f51-5100a530683d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5MTJiMDUwLTM2NzUtNDM5NC1hM2QxLWQwYjRjYjQzYWUwYVwvZGMxOHd3Yi1lMTk1Y2Q4MS1lZmJkLTQ4MGEtOWY1MS01MTAwYTUzMDY4M2QuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SL33h8GpzTu_M-WWzxQjyw0osVvDZ-NlEKmLkRLzZA8);
+  background-size: cover;
+  animation: spin 30s linear alternate infinite;
+}
+
+
+/* neptune*/
+.neptune{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 10px #00223E inset, 0 0 80px 20px #3d465c;
+  animation: jump 4s ease-in-out infinite;
+}
+        
+/*let the image inside the circle move paralleled*/
+.neptune > div {
+  width: 200%;
+  height: 100%;
+  box-shadow: 0 0 50px 40px #000000 inset, 10px 10px 25px 20px #006fca;/* inner shadow, outer shadow, (x,y,blur,blur range)*/
+  background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e0763947-6f42-4d09-944f-c2d6f41c415b/dcaifld-8408b286-dfb4-4b94-9d36-029c36cc636f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UwNzYzOTQ3LTZmNDItNGQwOS05NDRmLWMyZDZmNDFjNDE1YlwvZGNhaWZsZC04NDA4YjI4Ni1kZmI0LTRiOTQtOWQzNi0wMjljMzZjYzYzNmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yODnyxRY22JiaqPEBgn28JKMhuisNqchBcC3QQSJO24);
+  background-size: cover;
+  animation: spin 30s linear alternate infinite;
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes jump {
+  0%, 100% {
+      top: 10px;
+  }
+  50% {
+      top: 15%;
+  }
+}
+
+/*text styling setup*/
+p{
+  font-family: 'Gantari', sans-serif;
+  font-weight: 100;
+  color: #f7f7f7;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.p1{
+  font-family: 'Gantari', sans-serif;
+  font-weight: 100;
+  color: #f7f7f7;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1%;
+  padding-bottom: 14px;
+}
+
+h2{
+font-family: "Roboto", sans-serif;
+  color: #007de2;
+  font-weight: 600 ;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*texts of maori translation*/
+h4{
+position: absolute;
+font-family: "Roboto", sans-serif;
+font-weight: 200;
+color: #f7f7f7;
+font-size: 15px;
+text-align: initial;
+padding-bottom: 300px;
+}
+
+/*subheadings inside the box*/
+h5{
+font-family: "Roboto", sans-serif;
+font-weight: 300;
+color:#007de2;
+font-size: 12px;
+text-align: left;
+}
+
+.gap {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+
+
+/*main headings of each text box*/
+h1{
+font-family: "Roboto", sans-serif;
+font-weight: 800;
+background: -webkit-linear-gradient(#00B4DB, rgb(0, 75, 202));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 80px;
+text-align: center;
+}
+
+
